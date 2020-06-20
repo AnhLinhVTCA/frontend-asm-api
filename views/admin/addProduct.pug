@@ -1,0 +1,57 @@
+extends layout
+
+block content
+  #page-wrapper
+    .container-fluid
+      .row.bg-title
+        .col-lg-3.col-md-4.col-sm-4.col-xs-12
+          h4.page-title Add Product
+      .row
+        .col-md-12.col-xs-12
+          .white-box
+            form.form-horizontal.form-material(action="/admin/addprd" method="POST" enctype="multipart/form-data")
+              .form-group
+                label.col-md-12 Product Name
+                .col-md-12
+                  input.form-control.form-control-line(type='text' name="productName" placeholder='Product name' required)
+              .form-group
+                label.col-md-12 Price
+                .col-md-12
+                  input.form-control.form-control-line(type='number' min="10000" max="10000000" name='price' placeholder="Price" required)
+              .form-group
+                label.col-md-12 Category
+                .col-md-12
+                  input.form-control.form-control-line(type='text' name="category" placeholder="Category" required)
+              .listDetail
+                .row.col-md-12
+                  .form-group
+                    label.col-md-12 Color
+                    .col-md-12
+                      input.form-control.form-control-line(type='text' name="color" placeholder="Color")
+                  .form-group
+                    label.col-sm-12 Size
+                    .col-sm-12
+                      select.form-control.form-control-line(name="size")
+                        option(selected="selected" value="S") S
+                        option(value="M") M
+                        option(value="L") L
+                        option(value="XL") XL
+                        option(value="XXL") XXL
+                  .form-group
+                    label.col-md-12 Quantity
+                    .col-md-12
+                      input.form-control.form-control-line(type='number' name="quantity" min="0" max="1000" placeholder="Quantity")
+              .form-group
+                .col-sm-12
+                  h3.btn.btn-primary.addDetail Add detail
+              .form-group
+                label.col-md-12 Description
+                .col-md-12
+                  textarea.form-control.form-control-line(rows='10' name="description" style="height:100px")
+              .form-group
+                label.col-md-12 Image
+                .col-md-12
+                  input.form-control.form-control-line(type='file' name="image" multiple)
+              .form-group
+                .col-sm-12
+                  button.btn.btn-success(type="submit") Insert Product

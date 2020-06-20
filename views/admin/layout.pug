@@ -1,0 +1,73 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    title=title
+    link(rel='stylesheet' type='text/css' href='../vendor/bootstrap/css/bootstrap.css')
+    link(href='../css/style.css' rel='stylesheet')
+    link#theme(href='../css/colors/default.css' rel='stylesheet')
+  body
+    #wrapper
+    nav.navbar.navbar-default.navbar-static-top.m-b-0
+      .navbar-header
+        // /Logo
+        ul.nav.navbar-top-links.navbar-right.pull-right
+          li
+            form.app-search.hidden-sm.hidden-xs.m-r-10(role='search')
+              input.form-control(type='text' placeholder='Search...')
+              a(href='')
+                i.fa.fa-search
+          li
+            a.profile-pic(href='#')
+              img.img-circle(src='../images/users/varun.jpg' alt='user-img' width='36')
+              b.hidden-xs Linh Nguyen
+    .navbar-default.sidebar(role='navigation')
+      .sidebar-nav.slimscrollsidebar
+        .top-left-part.sidebar-head
+          a.logo(href='/admin')
+            img(src='../images/icons/logo-01.png' alt='IMG-LOGO')
+        ul#side-menu.nav
+          li(style='padding: 70px 0 0;')
+            a.waves-effect.active(href='/admin')
+              i.fa.fa-table.fa-fw(aria-hidden='true')
+              | Product Table
+          li
+            a.waves-effect(href='/admin/addProduct')
+              i.fa.fa-user.fa-fw(aria-hidden='true')
+              | Add product
+    block content
+    footer.footer.text-center
+        | 2020 &copy; Admin Coza Store
+    // Jquery
+    script(src='../vendor/jquery/jquery-3.2.1.min.js')
+    script.
+      $('.addDetail').click(()=>{
+      $(".listDetail").append(`<div class="row col-md-12">
+                                    <div class="form-group">
+                                        <label class="col-md-12">Color</label>
+                                        <div class="col-md-12">
+                                            <input class="form-control form-control-line" type="text" name="color" placeholder="Color" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-12">Size</label>
+                                        <div class="col-sm-12">
+                                            <select class="form-control form-control-line" name="size">
+                                                <option selected="selected">S</option>
+                                                <option>M</option>
+                                                <option>L</option>
+                                                <option>XL</option>
+                                                <option>XXL</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-12">Quantity</label>
+                                        <div class="col-md-12">
+                                            <input class="form-control form-control-line" type="number" name="quantity" min="0" max="1000" placeholder="Quantity" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>`)
+      });

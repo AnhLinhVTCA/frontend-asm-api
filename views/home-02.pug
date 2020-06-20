@@ -1,0 +1,843 @@
+extends layout
+
+block content
+  // Slider
+  section.section-slide
+    .wrap-slick1.rs1-slick1
+      .slick1
+        .item-slick1(style='background-image: url(images/slide-03.jpg);')
+          .container.h-full
+            .flex-col-l-m.h-full.p-t-100.p-b-30
+              .layer-slick1.animated.visible-false(data-appear='fadeInDown' data-delay='0')
+                span.ltext-202.cl2.respon2
+                  | Men Collection 2018
+              .layer-slick1.animated.visible-false(data-appear='fadeInUp' data-delay='800')
+                h2.ltext-104.cl2.p-t-19.p-b-43.respon1
+                  | New arrivals
+              .layer-slick1.animated.visible-false(data-appear='zoomIn' data-delay='1600')
+                a.flex-c-m.stext-101.cl0.size-101.bg1.bor1.hov-btn1.p-lr-15.trans-04(href='product')
+                  | Shop Now
+        .item-slick1(style='background-image: url(images/slide-02.jpg);')
+          .container.h-full
+            .flex-col-l-m.h-full.p-t-100.p-b-30
+              .layer-slick1.animated.visible-false(data-appear='rollIn' data-delay='0')
+                span.ltext-202.cl2.respon2
+                  | Men New-Season
+              .layer-slick1.animated.visible-false(data-appear='lightSpeedIn' data-delay='800')
+                h2.ltext-104.cl2.p-t-19.p-b-43.respon1
+                  | Jackets &amp; Coats
+              .layer-slick1.animated.visible-false(data-appear='slideInUp' data-delay='1600')
+                a.flex-c-m.stext-101.cl0.size-101.bg1.bor1.hov-btn1.p-lr-15.trans-04(href='product')
+                  | Shop Now
+        .item-slick1(style='background-image: url(images/slide-04.jpg);')
+          .container.h-full
+            .flex-col-l-m.h-full.p-t-100.p-b-30
+              .layer-slick1.animated.visible-false(data-appear='rotateInDownLeft' data-delay='0')
+                span.ltext-202.cl2.respon2
+                  | Women Collection 2018
+              .layer-slick1.animated.visible-false(data-appear='rotateInUpRight' data-delay='800')
+                h2.ltext-104.cl2.p-t-19.p-b-43.respon1
+                  | NEW SEASON
+              .layer-slick1.animated.visible-false(data-appear='rotateIn' data-delay='1600')
+                a.flex-c-m.stext-101.cl0.size-101.bg1.bor1.hov-btn1.p-lr-15.trans-04(href='product')
+                  | Shop Now
+  // Banner
+  .sec-banner.bg0
+    .flex-w.flex-c-m
+      .size-202.m-lr-auto.respon4
+        // Block1
+        .block1.wrap-pic-w
+          img(src='images/banner-04.jpg' alt='IMG-BANNER')
+          a.block1-txt.ab-t-l.s-full.flex-col-l-sb.p-lr-38.p-tb-34.trans-03.respon3(href='product')
+            .block1-txt-child1.flex-col-l
+              span.block1-name.ltext-102.trans-04.p-b-8
+                | Women
+              span.block1-info.stext-102.trans-04
+                | Spring 2018
+            .block1-txt-child2.p-b-4.trans-05
+              .block1-link.stext-101.cl0.trans-09
+                | Shop Now
+      .size-202.m-lr-auto.respon4
+        // Block1
+        .block1.wrap-pic-w
+          img(src='images/banner-05.jpg' alt='IMG-BANNER')
+          a.block1-txt.ab-t-l.s-full.flex-col-l-sb.p-lr-38.p-tb-34.trans-03.respon3(href='product')
+            .block1-txt-child1.flex-col-l
+              span.block1-name.ltext-102.trans-04.p-b-8
+                | Men
+              span.block1-info.stext-102.trans-04
+                | Spring 2018
+            .block1-txt-child2.p-b-4.trans-05
+              .block1-link.stext-101.cl0.trans-09
+                | Shop Now
+      .size-202.m-lr-auto.respon4
+        // Block1
+        .block1.wrap-pic-w
+          img(src='images/banner-06.jpg' alt='IMG-BANNER')
+          a.block1-txt.ab-t-l.s-full.flex-col-l-sb.p-lr-38.p-tb-34.trans-03.respon3(href='product')
+            .block1-txt-child1.flex-col-l
+              span.block1-name.ltext-102.trans-04.p-b-8
+                | Bags
+              span.block1-info.stext-102.trans-04
+                | New Trend
+            .block1-txt-child2.p-b-4.trans-05
+              .block1-link.stext-101.cl0.trans-09
+                | Shop Now
+  // Product
+  section.sec-product.bg0.p-t-100.p-b-50
+    .container
+      .p-b-32
+        h3.ltext-105.cl5.txt-center.respon1
+          | Store Overview
+      // Tab01
+      .tab01
+        // Nav tabs
+        ul.nav.nav-tabs(role='tablist')
+          li.nav-item.p-b-10
+            a.nav-link.active(data-toggle='tab' href='#best-seller' role='tab') Best Seller
+          li.nav-item.p-b-10
+            a.nav-link(data-toggle='tab' href='#featured' role='tab') Featured
+          li.nav-item.p-b-10
+            a.nav-link(data-toggle='tab' href='#sale' role='tab') Sale
+          li.nav-item.p-b-10
+            a.nav-link(data-toggle='tab' href='#top-rate' role='tab') Top Rate
+        // Tab panes
+        .tab-content.p-t-50
+          // -
+          #best-seller.tab-pane.fade.show.active(role='tabpanel')
+            // Slide2
+            .wrap-slick2
+              .slick2
+                .item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
+                  // Block2
+                  .block2
+                    .block2-pic.hov-img0
+                      img(src='images/product-01.jpg' alt='IMG-PRODUCT')
+                      a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
+                        | Quick View
+                    .block2-txt.flex-w.flex-t.p-t-14
+                      .block2-txt-child1.flex-col-l
+                        a.stext-104.cl4.hov-cl1.trans-04.js-name-b2.p-b-6(href='product-detail')
+                          | Esprit Ruffle Shirt
+                        span.stext-105.cl3
+                          | $16.64
+                      .block2-txt-child2.flex-r.p-t-3
+                        a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
+                          img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
+                          img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
+                .item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
+                  // Block2
+                  .block2
+                    .block2-pic.hov-img0
+                      img(src='images/product-02.jpg' alt='IMG-PRODUCT')
+                      a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
+                        | Quick View
+                    .block2-txt.flex-w.flex-t.p-t-14
+                      .block2-txt-child1.flex-col-l
+                        a.stext-104.cl4.hov-cl1.trans-04.js-name-b2.p-b-6(href='product-detail')
+                          | Herschel supply
+                        span.stext-105.cl3
+                          | $35.31
+                      .block2-txt-child2.flex-r.p-t-3
+                        a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
+                          img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
+                          img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
+                .item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
+                  // Block2
+                  .block2
+                    .block2-pic.hov-img0
+                      img(src='images/product-03.jpg' alt='IMG-PRODUCT')
+                      a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
+                        | Quick View
+                    .block2-txt.flex-w.flex-t.p-t-14
+                      .block2-txt-child1.flex-col-l
+                        a.stext-104.cl4.hov-cl1.trans-04.js-name-b2.p-b-6(href='product-detail')
+                          | Only Check Trouser
+                        span.stext-105.cl3
+                          | $25.50
+                      .block2-txt-child2.flex-r.p-t-3
+                        a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
+                          img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
+                          img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
+                .item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
+                  // Block2
+                  .block2
+                    .block2-pic.hov-img0
+                      img(src='images/product-04.jpg' alt='IMG-PRODUCT')
+                      a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
+                        | Quick View
+                    .block2-txt.flex-w.flex-t.p-t-14
+                      .block2-txt-child1.flex-col-l
+                        a.stext-104.cl4.hov-cl1.trans-04.js-name-b2.p-b-6(href='product-detail')
+                          | Classic Trench Coat
+                        span.stext-105.cl3
+                          | $75.00
+                      .block2-txt-child2.flex-r.p-t-3
+                        a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
+                          img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
+                          img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
+                .item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
+                  // Block2
+                  .block2
+                    .block2-pic.hov-img0
+                      img(src='images/product-05.jpg' alt='IMG-PRODUCT')
+                      a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
+                        | Quick View
+                    .block2-txt.flex-w.flex-t.p-t-14
+                      .block2-txt-child1.flex-col-l
+                        a.stext-104.cl4.hov-cl1.trans-04.js-name-b2.p-b-6(href='product-detail')
+                          | Front Pocket Jumper
+                        span.stext-105.cl3
+                          | $34.75
+                      .block2-txt-child2.flex-r.p-t-3
+                        a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
+                          img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
+                          img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
+                .item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
+                  // Block2
+                  .block2
+                    .block2-pic.hov-img0
+                      img(src='images/product-06.jpg' alt='IMG-PRODUCT')
+                      a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
+                        | Quick View
+                    .block2-txt.flex-w.flex-t.p-t-14
+                      .block2-txt-child1.flex-col-l
+                        a.stext-104.cl4.hov-cl1.trans-04.js-name-b2.p-b-6(href='product-detail')
+                          | Vintage Inspired Classic
+                        span.stext-105.cl3
+                          | $93.20
+                      .block2-txt-child2.flex-r.p-t-3
+                        a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
+                          img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
+                          img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
+                .item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
+                  // Block2
+                  .block2
+                    .block2-pic.hov-img0
+                      img(src='images/product-07.jpg' alt='IMG-PRODUCT')
+                      a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
+                        | Quick View
+                    .block2-txt.flex-w.flex-t.p-t-14
+                      .block2-txt-child1.flex-col-l
+                        a.stext-104.cl4.hov-cl1.trans-04.js-name-b2.p-b-6(href='product-detail')
+                          | Shirt in Stretch Cotton
+                        span.stext-105.cl3
+                          | $52.66
+                      .block2-txt-child2.flex-r.p-t-3
+                        a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
+                          img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
+                          img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
+                .item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
+                  // Block2
+                  .block2
+                    .block2-pic.hov-img0
+                      img(src='images/product-08.jpg' alt='IMG-PRODUCT')
+                      a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
+                        | Quick View
+                    .block2-txt.flex-w.flex-t.p-t-14
+                      .block2-txt-child1.flex-col-l
+                        a.stext-104.cl4.hov-cl1.trans-04.js-name-b2.p-b-6(href='product-detail')
+                          | Pieces Metallic Printed
+                        span.stext-105.cl3
+                          | $18.96
+                      .block2-txt-child2.flex-r.p-t-3
+                        a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
+                          img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
+                          img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
+          // -
+          #featured.tab-pane.fade(role='tabpanel')
+            // Slide2
+            .wrap-slick2
+              .slick2
+                .item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
+                  // Block2
+                  .block2
+                    .block2-pic.hov-img0
+                      img(src='images/product-09.jpg' alt='IMG-PRODUCT')
+                      a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
+                        | Quick View
+                    .block2-txt.flex-w.flex-t.p-t-14
+                      .block2-txt-child1.flex-col-l
+                        a.stext-104.cl4.hov-cl1.trans-04.js-name-b2.p-b-6(href='product-detail')
+                          | Converse All Star Hi Plimsolls
+                        span.stext-105.cl3
+                          | $75.00
+                      .block2-txt-child2.flex-r.p-t-3
+                        a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
+                          img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
+                          img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
+                .item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
+                  // Block2
+                  .block2
+                    .block2-pic.hov-img0
+                      img(src='images/product-10.jpg' alt='IMG-PRODUCT')
+                      a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
+                        | Quick View
+                    .block2-txt.flex-w.flex-t.p-t-14
+                      .block2-txt-child1.flex-col-l
+                        a.stext-104.cl4.hov-cl1.trans-04.js-name-b2.p-b-6(href='product-detail')
+                          | Femme T-Shirt In Stripe
+                        span.stext-105.cl3
+                          | $25.85
+                      .block2-txt-child2.flex-r.p-t-3
+                        a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
+                          img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
+                          img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
+                .item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
+                  // Block2
+                  .block2
+                    .block2-pic.hov-img0
+                      img(src='images/product-11.jpg' alt='IMG-PRODUCT')
+                      a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
+                        | Quick View
+                    .block2-txt.flex-w.flex-t.p-t-14
+                      .block2-txt-child1.flex-col-l
+                        a.stext-104.cl4.hov-cl1.trans-04.js-name-b2.p-b-6(href='product-detail')
+                          | Herschel supply
+                        span.stext-105.cl3
+                          | $63.16
+                      .block2-txt-child2.flex-r.p-t-3
+                        a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
+                          img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
+                          img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
+                .item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
+                  // Block2
+                  .block2
+                    .block2-pic.hov-img0
+                      img(src='images/product-12.jpg' alt='IMG-PRODUCT')
+                      a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
+                        | Quick View
+                    .block2-txt.flex-w.flex-t.p-t-14
+                      .block2-txt-child1.flex-col-l
+                        a.stext-104.cl4.hov-cl1.trans-04.js-name-b2.p-b-6(href='product-detail')
+                          | Herschel supply
+                        span.stext-105.cl3
+                          | $63.15
+                      .block2-txt-child2.flex-r.p-t-3
+                        a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
+                          img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
+                          img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
+                .item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
+                  // Block2
+                  .block2
+                    .block2-pic.hov-img0
+                      img(src='images/product-13.jpg' alt='IMG-PRODUCT')
+                      a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
+                        | Quick View
+                    .block2-txt.flex-w.flex-t.p-t-14
+                      .block2-txt-child1.flex-col-l
+                        a.stext-104.cl4.hov-cl1.trans-04.js-name-b2.p-b-6(href='product-detail')
+                          | T-Shirt with Sleeve
+                        span.stext-105.cl3
+                          | $18.49
+                      .block2-txt-child2.flex-r.p-t-3
+                        a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
+                          img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
+                          img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
+                .item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
+                  // Block2
+                  .block2
+                    .block2-pic.hov-img0
+                      img(src='images/product-14.jpg' alt='IMG-PRODUCT')
+                      a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
+                        | Quick View
+                    .block2-txt.flex-w.flex-t.p-t-14
+                      .block2-txt-child1.flex-col-l
+                        a.stext-104.cl4.hov-cl1.trans-04.js-name-b2.p-b-6(href='product-detail')
+                          | Pretty Little Thing
+                        span.stext-105.cl3
+                          | $54.79
+                      .block2-txt-child2.flex-r.p-t-3
+                        a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
+                          img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
+                          img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
+                .item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
+                  // Block2
+                  .block2
+                    .block2-pic.hov-img0
+                      img(src='images/product-15.jpg' alt='IMG-PRODUCT')
+                      a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
+                        | Quick View
+                    .block2-txt.flex-w.flex-t.p-t-14
+                      .block2-txt-child1.flex-col-l
+                        a.stext-104.cl4.hov-cl1.trans-04.js-name-b2.p-b-6(href='product-detail')
+                          | Mini Silver Mesh Watch
+                        span.stext-105.cl3
+                          | $86.85
+                      .block2-txt-child2.flex-r.p-t-3
+                        a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
+                          img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
+                          img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
+                .item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
+                  // Block2
+                  .block2
+                    .block2-pic.hov-img0
+                      img(src='images/product-16.jpg' alt='IMG-PRODUCT')
+                      a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
+                        | Quick View
+                    .block2-txt.flex-w.flex-t.p-t-14
+                      .block2-txt-child1.flex-col-l
+                        a.stext-104.cl4.hov-cl1.trans-04.js-name-b2.p-b-6(href='product-detail')
+                          | Square Neck Back
+                        span.stext-105.cl3
+                          | $29.64
+                      .block2-txt-child2.flex-r.p-t-3
+                        a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
+                          img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
+                          img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
+          // -
+          #sale.tab-pane.fade(role='tabpanel')
+            // Slide2
+            .wrap-slick2
+              .slick2
+                .item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
+                  // Block2
+                  .block2
+                    .block2-pic.hov-img0
+                      img(src='images/product-02.jpg' alt='IMG-PRODUCT')
+                      a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
+                        | Quick View
+                    .block2-txt.flex-w.flex-t.p-t-14
+                      .block2-txt-child1.flex-col-l
+                        a.stext-104.cl4.hov-cl1.trans-04.js-name-b2.p-b-6(href='product-detail')
+                          | Herschel supply
+                        span.stext-105.cl3
+                          | $35.31
+                      .block2-txt-child2.flex-r.p-t-3
+                        a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
+                          img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
+                          img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
+                .item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
+                  // Block2
+                  .block2
+                    .block2-pic.hov-img0
+                      img(src='images/product-04.jpg' alt='IMG-PRODUCT')
+                      a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
+                        | Quick View
+                    .block2-txt.flex-w.flex-t.p-t-14
+                      .block2-txt-child1.flex-col-l
+                        a.stext-104.cl4.hov-cl1.trans-04.js-name-b2.p-b-6(href='product-detail')
+                          | Classic Trench Coat
+                        span.stext-105.cl3
+                          | $75.00
+                      .block2-txt-child2.flex-r.p-t-3
+                        a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
+                          img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
+                          img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
+                .item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
+                  // Block2
+                  .block2
+                    .block2-pic.hov-img0
+                      img(src='images/product-06.jpg' alt='IMG-PRODUCT')
+                      a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
+                        | Quick View
+                    .block2-txt.flex-w.flex-t.p-t-14
+                      .block2-txt-child1.flex-col-l
+                        a.stext-104.cl4.hov-cl1.trans-04.js-name-b2.p-b-6(href='product-detail')
+                          | Vintage Inspired Classic
+                        span.stext-105.cl3
+                          | $93.20
+                      .block2-txt-child2.flex-r.p-t-3
+                        a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
+                          img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
+                          img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
+                .item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
+                  // Block2
+                  .block2
+                    .block2-pic.hov-img0
+                      img(src='images/product-09.jpg' alt='IMG-PRODUCT')
+                      a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
+                        | Quick View
+                    .block2-txt.flex-w.flex-t.p-t-14
+                      .block2-txt-child1.flex-col-l
+                        a.stext-104.cl4.hov-cl1.trans-04.js-name-b2.p-b-6(href='product-detail')
+                          | Converse All Star Hi Plimsolls
+                        span.stext-105.cl3
+                          | $75.00
+                      .block2-txt-child2.flex-r.p-t-3
+                        a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
+                          img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
+                          img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
+                .item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
+                  // Block2
+                  .block2
+                    .block2-pic.hov-img0
+                      img(src='images/product-11.jpg' alt='IMG-PRODUCT')
+                      a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
+                        | Quick View
+                    .block2-txt.flex-w.flex-t.p-t-14
+                      .block2-txt-child1.flex-col-l
+                        a.stext-104.cl4.hov-cl1.trans-04.js-name-b2.p-b-6(href='product-detail')
+                          | Herschel supply
+                        span.stext-105.cl3
+                          | $63.16
+                      .block2-txt-child2.flex-r.p-t-3
+                        a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
+                          img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
+                          img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
+                .item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
+                  // Block2
+                  .block2
+                    .block2-pic.hov-img0
+                      img(src='images/product-13.jpg' alt='IMG-PRODUCT')
+                      a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
+                        | Quick View
+                    .block2-txt.flex-w.flex-t.p-t-14
+                      .block2-txt-child1.flex-col-l
+                        a.stext-104.cl4.hov-cl1.trans-04.js-name-b2.p-b-6(href='product-detail')
+                          | T-Shirt with Sleeve
+                        span.stext-105.cl3
+                          | $18.49
+                      .block2-txt-child2.flex-r.p-t-3
+                        a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
+                          img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
+                          img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
+                .item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
+                  // Block2
+                  .block2
+                    .block2-pic.hov-img0
+                      img(src='images/product-15.jpg' alt='IMG-PRODUCT')
+                      a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
+                        | Quick View
+                    .block2-txt.flex-w.flex-t.p-t-14
+                      .block2-txt-child1.flex-col-l
+                        a.stext-104.cl4.hov-cl1.trans-04.js-name-b2.p-b-6(href='product-detail')
+                          | Mini Silver Mesh Watch
+                        span.stext-105.cl3
+                          | $86.85
+                      .block2-txt-child2.flex-r.p-t-3
+                        a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
+                          img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
+                          img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
+          // -
+          #top-rate.tab-pane.fade(role='tabpanel')
+            // Slide2
+            .wrap-slick2
+              .slick2
+                .item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
+                  // Block2
+                  .block2
+                    .block2-pic.hov-img0
+                      img(src='images/product-03.jpg' alt='IMG-PRODUCT')
+                      a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
+                        | Quick View
+                    .block2-txt.flex-w.flex-t.p-t-14
+                      .block2-txt-child1.flex-col-l
+                        a.stext-104.cl4.hov-cl1.trans-04.js-name-b2.p-b-6(href='product-detail')
+                          | Only Check Trouser
+                        span.stext-105.cl3
+                          | $25.50
+                      .block2-txt-child2.flex-r.p-t-3
+                        a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
+                          img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
+                          img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
+                .item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
+                  // Block2
+                  .block2
+                    .block2-pic.hov-img0
+                      img(src='images/product-06.jpg' alt='IMG-PRODUCT')
+                      a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
+                        | Quick View
+                    .block2-txt.flex-w.flex-t.p-t-14
+                      .block2-txt-child1.flex-col-l
+                        a.stext-104.cl4.hov-cl1.trans-04.js-name-b2.p-b-6(href='product-detail')
+                          | Vintage Inspired Classic
+                        span.stext-105.cl3
+                          | $93.20
+                      .block2-txt-child2.flex-r.p-t-3
+                        a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
+                          img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
+                          img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
+                .item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
+                  // Block2
+                  .block2
+                    .block2-pic.hov-img0
+                      img(src='images/product-07.jpg' alt='IMG-PRODUCT')
+                      a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
+                        | Quick View
+                    .block2-txt.flex-w.flex-t.p-t-14
+                      .block2-txt-child1.flex-col-l
+                        a.stext-104.cl4.hov-cl1.trans-04.js-name-b2.p-b-6(href='product-detail')
+                          | Shirt in Stretch Cotton
+                        span.stext-105.cl3
+                          | $52.66
+                      .block2-txt-child2.flex-r.p-t-3
+                        a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
+                          img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
+                          img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
+                .item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
+                  // Block2
+                  .block2
+                    .block2-pic.hov-img0
+                      img(src='images/product-08.jpg' alt='IMG-PRODUCT')
+                      a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
+                        | Quick View
+                    .block2-txt.flex-w.flex-t.p-t-14
+                      .block2-txt-child1.flex-col-l
+                        a.stext-104.cl4.hov-cl1.trans-04.js-name-b2.p-b-6(href='product-detail')
+                          | Pieces Metallic Printed
+                        span.stext-105.cl3
+                          | $18.96
+                      .block2-txt-child2.flex-r.p-t-3
+                        a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
+                          img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
+                          img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
+                .item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
+                  // Block2
+                  .block2
+                    .block2-pic.hov-img0
+                      img(src='images/product-09.jpg' alt='IMG-PRODUCT')
+                      a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
+                        | Quick View
+                    .block2-txt.flex-w.flex-t.p-t-14
+                      .block2-txt-child1.flex-col-l
+                        a.stext-104.cl4.hov-cl1.trans-04.js-name-b2.p-b-6(href='product-detail')
+                          | Converse All Star Hi Plimsolls
+                        span.stext-105.cl3
+                          | $75.00
+                      .block2-txt-child2.flex-r.p-t-3
+                        a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
+                          img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
+                          img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
+                .item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
+                  // Block2
+                  .block2
+                    .block2-pic.hov-img0
+                      img(src='images/product-10.jpg' alt='IMG-PRODUCT')
+                      a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
+                        | Quick View
+                    .block2-txt.flex-w.flex-t.p-t-14
+                      .block2-txt-child1.flex-col-l
+                        a.stext-104.cl4.hov-cl1.trans-04.js-name-b2.p-b-6(href='product-detail')
+                          | Femme T-Shirt In Stripe
+                        span.stext-105.cl3
+                          | $25.85
+                      .block2-txt-child2.flex-r.p-t-3
+                        a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
+                          img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
+                          img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
+                .item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
+                  // Block2
+                  .block2
+                    .block2-pic.hov-img0
+                      img(src='images/product-11.jpg' alt='IMG-PRODUCT')
+                      a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
+                        | Quick View
+                    .block2-txt.flex-w.flex-t.p-t-14
+                      .block2-txt-child1.flex-col-l
+                        a.stext-104.cl4.hov-cl1.trans-04.js-name-b2.p-b-6(href='product-detail')
+                          | Herschel supply
+                        span.stext-105.cl3
+                          | $63.16
+                      .block2-txt-child2.flex-r.p-t-3
+                        a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
+                          img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
+                          img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
+                .item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
+                  // Block2
+                  .block2
+                    .block2-pic.hov-img0
+                      img(src='images/product-12.jpg' alt='IMG-PRODUCT')
+                      a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
+                        | Quick View
+                    .block2-txt.flex-w.flex-t.p-t-14
+                      .block2-txt-child1.flex-col-l
+                        a.stext-104.cl4.hov-cl1.trans-04.js-name-b2.p-b-6(href='product-detail')
+                          | Herschel supply
+                        span.stext-105.cl3
+                          | $63.15
+                      .block2-txt-child2.flex-r.p-t-3
+                        a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
+                          img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
+                          img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
+                .item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
+                  // Block2
+                  .block2
+                    .block2-pic.hov-img0
+                      img(src='images/product-13.jpg' alt='IMG-PRODUCT')
+                      a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
+                        | Quick View
+                    .block2-txt.flex-w.flex-t.p-t-14
+                      .block2-txt-child1.flex-col-l
+                        a.stext-104.cl4.hov-cl1.trans-04.js-name-b2.p-b-6(href='product-detail')
+                          | T-Shirt with Sleeve
+                        span.stext-105.cl3
+                          | $18.49
+                      .block2-txt-child2.flex-r.p-t-3
+                        a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
+                          img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
+                          img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
+                .item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
+                  // Block2
+                  .block2
+                    .block2-pic.hov-img0
+                      img(src='images/product-16.jpg' alt='IMG-PRODUCT')
+                      a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
+                        | Quick View
+                    .block2-txt.flex-w.flex-t.p-t-14
+                      .block2-txt-child1.flex-col-l
+                        a.stext-104.cl4.hov-cl1.trans-04.js-name-b2.p-b-6(href='product-detail')
+                          | Square Neck Back
+                        span.stext-105.cl3
+                          | $29.64
+                      .block2-txt-child2.flex-r.p-t-3
+                        a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
+                          img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
+                          img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
+  // Blog
+  section.sec-blog.bg0.p-t-60.p-b-90
+    .container
+      .p-b-66
+        h3.ltext-105.cl5.txt-center.respon1
+          | Our Blogs
+      .row
+        .col-sm-6.col-md-4.p-b-40
+          .blog-item
+            .hov-img0
+              a(href='blog-detail')
+                img(src='images/blog-01.jpg' alt='IMG-BLOG')
+            .p-t-15
+              .stext-107.flex-w.p-b-14
+                span.m-r-3
+                  span.cl4
+                    | By
+                  span.cl5
+                    | Nancy Ward
+                span
+                  span.cl4
+                    | on
+                  span.cl5
+                    | July 22, 2017
+              h4.p-b-12
+                a.mtext-101.cl2.hov-cl1.trans-04(href='blog-detail')
+                  | 8 Inspiring Ways to Wear Dresses in the Winter
+              p.stext-108.cl6
+                | Duis ut velit gravida nibh bibendum commodo. Suspendisse pellentesque mattis augue id euismod. Interdum et male-suada fames
+        .col-sm-6.col-md-4.p-b-40
+          .blog-item
+            .hov-img0
+              a(href='blog-detail')
+                img(src='images/blog-02.jpg' alt='IMG-BLOG')
+            .p-t-15
+              .stext-107.flex-w.p-b-14
+                span.m-r-3
+                  span.cl4
+                    | By
+                  span.cl5
+                    | Nancy Ward
+                span
+                  span.cl4
+                    | on
+                  span.cl5
+                    | July 18, 2017
+              h4.p-b-12
+                a.mtext-101.cl2.hov-cl1.trans-04(href='blog-detail')
+                  | The Great Big List of Men&rsquo;s Gifts for the Holidays
+              p.stext-108.cl6
+                | Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit ame
+        .col-sm-6.col-md-4.p-b-40
+          .blog-item
+            .hov-img0
+              a(href='blog-detail')
+                img(src='images/blog-03.jpg' alt='IMG-BLOG')
+            .p-t-15
+              .stext-107.flex-w.p-b-14
+                span.m-r-3
+                  span.cl4
+                    | By
+                  span.cl5
+                    | Nancy Ward
+                span
+                  span.cl4
+                    | on
+                  span.cl5
+                    | July 2, 2017
+              h4.p-b-12
+                a.mtext-101.cl2.hov-cl1.trans-04(href='blog-detail')
+                  | 5 Winter-to-Spring Fashion Trends to Try Now
+              p.stext-108.cl6
+                | Proin nec vehicula lorem, a efficitur ex. Nam vehicula nulla vel erat tincidunt, sed hendrerit ligula porttitor. Fusce sit amet maximus nunc
+  // Modal1
+  .wrap-modal1.js-modal1.p-t-60.p-b-20
+    .overlay-modal1.js-hide-modal1
+    .container
+      .bg0.p-t-60.p-b-30.p-lr-15-lg.how-pos3-parent
+        button.how-pos3.hov3.trans-04.js-hide-modal1
+          img(src='images/icons/icon-close.png' alt='CLOSE')
+        .row
+          .col-md-6.col-lg-7.p-b-30
+            .p-l-25.p-r-30.p-lr-0-lg
+              .wrap-slick3.flex-sb.flex-w
+                .wrap-slick3-dots
+                .wrap-slick3-arrows.flex-sb-m.flex-w
+                .slick3.gallery-lb
+                  .item-slick3(data-thumb='images/product-detail-01.jpg')
+                    .wrap-pic-w.pos-relative
+                      img(src='images/product-detail-01.jpg' alt='IMG-PRODUCT')
+                      a.flex-c-m.size-108.how-pos1.bor0.fs-16.cl10.bg0.hov-btn3.trans-04(href='images/product-detail-01.jpg')
+                        i.fa.fa-expand
+                  .item-slick3(data-thumb='images/product-detail-02.jpg')
+                    .wrap-pic-w.pos-relative
+                      img(src='images/product-detail-02.jpg' alt='IMG-PRODUCT')
+                      a.flex-c-m.size-108.how-pos1.bor0.fs-16.cl10.bg0.hov-btn3.trans-04(href='images/product-detail-02.jpg')
+                        i.fa.fa-expand
+                  .item-slick3(data-thumb='images/product-detail-03.jpg')
+                    .wrap-pic-w.pos-relative
+                      img(src='images/product-detail-03.jpg' alt='IMG-PRODUCT')
+                      a.flex-c-m.size-108.how-pos1.bor0.fs-16.cl10.bg0.hov-btn3.trans-04(href='images/product-detail-03.jpg')
+                        i.fa.fa-expand
+          .col-md-6.col-lg-5.p-b-30
+            .p-r-50.p-t-5.p-lr-0-lg
+              h4.mtext-105.cl2.js-name-detail.p-b-14
+                | Lightweight Jacket
+              span.mtext-106.cl2
+                | $58.79
+              p.stext-102.cl3.p-t-23
+                | Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.
+              // 
+              .p-t-33
+                .flex-w.flex-r-m.p-b-10
+                  .size-203.flex-c-m.respon6
+                    | Size
+                  .size-204.respon6-next
+                    .rs1-select2.bor8.bg0
+                      select.js-select2(name='time')
+                        option Choose an option
+                        option Size S
+                        option Size M
+                        option Size L
+                        option Size XL
+                      .dropDownSelect2
+                .flex-w.flex-r-m.p-b-10
+                  .size-203.flex-c-m.respon6
+                    | Color
+                  .size-204.respon6-next
+                    .rs1-select2.bor8.bg0
+                      select.js-select2(name='time')
+                        option Choose an option
+                        option Red
+                        option Blue
+                        option White
+                        option Grey
+                      .dropDownSelect2
+                .flex-w.flex-r-m.p-b-10
+                  .size-204.flex-w.flex-m.respon6-next
+                    .wrap-num-product.flex-w.m-r-20.m-tb-10
+                      .btn-num-product-down.cl8.hov-btn3.trans-04.flex-c-m
+                        i.fs-16.zmdi.zmdi-minus
+                      input.mtext-104.cl3.txt-center.num-product(type='number' name='num-product' value='1')
+                      .btn-num-product-up.cl8.hov-btn3.trans-04.flex-c-m
+                        i.fs-16.zmdi.zmdi-plus
+                    button.flex-c-m.stext-101.cl0.size-101.bg1.bor1.hov-btn1.p-lr-15.trans-04.js-addcart-detail
+                      | Add to cart
+              // 
+              .flex-w.flex-m.p-l-100.p-t-40.respon7
+                .flex-m.bor9.p-r-10.m-r-11
+                  a.fs-14.cl3.hov-cl1.trans-04.lh-10.p-lr-5.p-tb-2.js-addwish-detail.tooltip100(href='#' data-tooltip='Add to Wishlist')
+                    i.zmdi.zmdi-favorite
+                a.fs-14.cl3.hov-cl1.trans-04.lh-10.p-lr-5.p-tb-2.m-r-8.tooltip100(href='#' data-tooltip='Facebook')
+                  i.fa.fa-facebook
+                a.fs-14.cl3.hov-cl1.trans-04.lh-10.p-lr-5.p-tb-2.m-r-8.tooltip100(href='#' data-tooltip='Twitter')
+                  i.fa.fa-twitter
+                a.fs-14.cl3.hov-cl1.trans-04.lh-10.p-lr-5.p-tb-2.m-r-8.tooltip100(href='#' data-tooltip='Google Plus')
+                  i.fa.fa-google-plus
