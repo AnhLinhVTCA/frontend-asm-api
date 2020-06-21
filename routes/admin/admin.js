@@ -2,7 +2,6 @@ const express = require("express");
 const adminServices = require("../../service/adminServices");
 const router = express.Router();
 const multer = require("multer");
-const mongoose = require("mongoose");
 const productModel = require("../../model/product");
 router.get("/", async (req, res, next) => {
   const allProduct = await adminServices.getAllProducts();
@@ -39,9 +38,9 @@ const fileFilter = (req, file, cb) => {
 };
 
 const upload = multer({ storage, fileFilter });
-const imagePath = [];
-const details = [];
 router.post("/addprd", upload.array("image", 12), async (req, res, next) => {
+  const imagePath = [];
+  const details = [];
   const {
     productName,
     price,

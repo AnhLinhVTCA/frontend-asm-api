@@ -5,34 +5,38 @@ block content
     .container-fluid
       .row.bg-title
         .col-lg-3.col-md-4.col-sm-4.col-xs-12
-          h4.page-title Basic Table
+          h4.page-title Product Table
       .row
         .col-sm-12
           .white-box
-            .table-responsive
+            .table
               table.table
                 thead
-                  tr
-                    th.text-center(scope="col") #
-                    th.text-center(scope="col") Product Name
-                    th.text-center(scope="col") Category
-                    th.text-center(scope="col") Detail
-                    th.text-center(scope="col") Description
-                    th.text-center(scope="col") dateCreate
-                    th.text-center(scope="col") Price
+                  tr.row
+                    th.col-sm-1.text-center #
+                    th.col-sm-2.text-center Product Name
+                    th.col-sm-1.text-center Category
+                    th.col-sm-1.text-center Color
+                    th.col-sm-1.text-center Size
+                    th.col-sm-1.text-center Quantity
+                    th.col-sm-3.text-center Description
+                    th.col-sm-1.text-center Date create
+                    th.col-sm-1 Price
                 tbody
                   - for (let i=0; i < listProducts.length; i++)
-                    tr
-                      td(scope="row")=i+1
-                      td=listProducts[i].productName
-                      td=listProducts[i].category
-                      td
+                    tr.row
+                      td.col-sm-1.text-center #{i+1}
+                      td.col-sm-2.text-center #{listProducts[i].productName}
+                      td.col-sm-1.text-center #{listProducts[i].category}
+                      td.col-sm-1.text-center
                         - for (let j=0; j < listProducts[i].details.length; j++)
-                          ul
-                            li=listProducts[i].details[j].color
-                            li=listProducts[i].details[j].size
-                            li=listProducts[i].details[j].quantity
-                      td=listProducts[i].description
-                      td=listProducts[i].dateCreate.toLocaleString()
-                      td=listProducts[i].price
-                    tr
+                            p #{listProducts[i].details[j].color}
+                      td.col-sm-1.text-center
+                        - for (let j=0; j < listProducts[i].details.length; j++)
+                            p #{listProducts[i].details[j].size}
+                      td.col-sm-1.text-center
+                        - for (let j=0; j < listProducts[i].details.length; j++)
+                            p #{listProducts[i].details[j].quantity}
+                      td.col-sm-3 #{listProducts[i].description}
+                      td.col-sm-1.text-center #{listProducts[i].dateCreate.toLocaleString()}
+                      td.col-sm-1 #{listProducts[i].price}$
