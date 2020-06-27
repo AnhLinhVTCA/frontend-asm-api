@@ -5,85 +5,86 @@ html
     meta(charset='UTF-8')
     meta(name='viewport' content='width=device-width, initial-scale=1')
     // ===============================================================================================
-    link(rel='icon' type='image/png' href='images/icons/favicon.png')
+    link(rel='icon' type='image/png' href='../images/icons/favicon.png')
     // ===============================================================================================
-    link(rel='stylesheet' type='text/css' href='vendor/bootstrap/css/bootstrap.css')
+    link(rel='stylesheet' type='text/css' href='../vendor/bootstrap/css/bootstrap.css')
     // ===============================================================================================
-    link(rel='stylesheet' type='text/css' href='fonts/font-awesome-4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet' type='text/css' href='../fonts/font-awesome-4.7.0/css/font-awesome.min.css')
     // ===============================================================================================
-    link(rel='stylesheet' type='text/css' href='fonts/iconic/css/material-design-iconic-font.min.css')
+    link(rel='stylesheet' type='text/css' href='../fonts/iconic/css/material-design-iconic-font.min.css')
     // ===============================================================================================
-    link(rel='stylesheet' type='text/css' href='fonts/linearicons-v1.0.0/icon-font.min.css')
+    link(rel='stylesheet' type='text/css' href='../fonts/linearicons-v1.0.0/icon-font.min.css')
     // ===============================================================================================
-    link(rel='stylesheet' type='text/css' href='vendor/animate/animate.css')
+    link(rel='stylesheet' type='text/css' href='../vendor/animate/animate.css')
     // ===============================================================================================
-    link(rel='stylesheet' type='text/css' href='vendor/css-hamburgers/hamburgers.min.css')
+    link(rel='stylesheet' type='text/css' href='../vendor/css-hamburgers/hamburgers.min.css')
     // ===============================================================================================
-    link(rel='stylesheet' type='text/css' href='vendor/animsition/css/animsition.min.css')
+    link(rel='stylesheet' type='text/css' href='../vendor/animsition/css/animsition.min.css')
     // ===============================================================================================
-    link(rel='stylesheet' type='text/css' href='vendor/select2/select2.min.css')
+    link(rel='stylesheet' type='text/css' href='../vendor/select2/select2.min.css')
     // ===============================================================================================
-    link(rel='stylesheet' type='text/css' href='vendor/daterangepicker/daterangepicker.css')
+    link(rel='stylesheet' type='text/css' href='../vendor/daterangepicker/daterangepicker.css')
     // ===============================================================================================
-    link(rel='stylesheet' type='text/css' href='vendor/slick/slick.css')
+    link(rel='stylesheet' type='text/css' href='../vendor/slick/slick.css')
     // ===============================================================================================
-    link(rel='stylesheet' type='text/css' href='vendor/MagnificPopup/magnific-popup.css')
+    link(rel='stylesheet' type='text/css' href='../vendor/MagnificPopup/magnific-popup.css')
     // ===============================================================================================
-    link(rel='stylesheet' type='text/css' href='vendor/perfect-scrollbar/perfect-scrollbar.css')
+    link(rel='stylesheet' type='text/css' href='../vendor/perfect-scrollbar/perfect-scrollbar.css')
     // ===============================================================================================
-    link(rel='stylesheet' type='text/css' href='css/util.css')
-    link(rel='stylesheet' type='text/css' href='css/main.css')
+    link(rel='stylesheet' type='text/css' href='../css/util.css')
+    link(rel='stylesheet' type='text/css' href='../css/main.css')
     // ===============================================================================================
   body
-    header.header-v4
+    header(class=(index === 1 ? undefined : index === 1.2 ? "header-v2" : index === 1.3 ? "header-v3" : "header-v4"))
       // Header desktop
       .container-menu-desktop
         // Topbar
-        .top-bar
-          .content-topbar.flex-sb-m.h-full.container
-            .left-top-bar
-              | Free shipping for standard order over $100
-            .right-top-bar.flex-w.h-full
-              a.flex-c-m.trans-04.p-lr-25(href='#')
-                | Help &amp; FAQs
-              a.flex-c-m.trans-04.p-lr-25.btn.btn-default.btn-rounded.mb-4(href="#" data-toggle='modal' data-target='#modalLoginForm')
-                | My Account
-              a.flex-c-m.trans-04.p-lr-25(href='#')
-                | EN
-              a.flex-c-m.trans-04.p-lr-25(href='#')
-                | USD
+        if (index !== 1.3)
+          .top-bar
+            .content-topbar.flex-sb-m.h-full.container
+              .left-top-bar
+                | Free shipping for standard order over $100
+              .right-top-bar.flex-w.h-full
+                a.flex-c-m.trans-04.p-lr-25(href='#')
+                  | Help &amp; FAQs
+                a.flex-c-m.trans-04.p-lr-25.btn.btn-default.btn-rounded.mb-4(href="#" data-toggle='modal' data-target='#modalLoginForm')
+                  | My Account
+                a.flex-c-m.trans-04.p-lr-25(href='#')
+                  | EN
+                a.flex-c-m.trans-04.p-lr-25(href='#')
+                  | USD
         .wrap-menu-desktop
           nav.limiter-menu-desktop.container
             // Logo desktop
             a.logo(href='/')
-              img(src='images/icons/logo-01.png' alt='IMG-LOGO')
+              img(src=(index === 1.3 ? '../images/icons/logo-02.png' : '../images/icons/logo-01.png') alt='IMG-LOGO')
             // Menu desktop
             .menu-desktop
               ul.main-menu
-                li.active-menu
+                li(class=(index === 1 ? "active-menu" : undefined))
                   a(href='/') Home
                   ul.sub-menu
                     li
                       a(href='/') Homepage 1
                     li
-                      a(href='home-02') Homepage 2
+                      a(href='/home-02') Homepage 2
                     li
-                      a(href='home-03') Homepage 3
-                li
-                  a(href='product') Shop
-                li.label1(data-label1='hot')
-                  a(href='shoping-cart') Features
-                li
-                  a(href='blog') Blog
-                li
-                  a(href='about') About
-                li
-                  a(href='contact') Contact
+                      a(href='/home-03') Homepage 3
+                li(class=(index === 2 ? "active-menu" : undefined))
+                  a(href='/product') Shop
+                li.label1(data-label1='hot' class=(index === 3 ? "active-menu" : undefined))
+                  a(href='/shoping-cart') Features
+                li(class=(index === 4 ? "active-menu" : undefined))
+                  a(href='/blog') Blog
+                li(class=(index === 5 ? "active-menu" : undefined))
+                  a(href='/about') About
+                li(class=(index === 6 ? "active-menu" : undefined))
+                  a(href='/contact') Contact
             // Icon header
             .wrap-icon-header.flex-w.flex-r-m
               .icon-header-item.cl2.hov-cl1.trans-04.p-l-22.p-r-11.js-show-modal-search
                 i.zmdi.zmdi-search
-              .icon-header-item.cl2.hov-cl1.trans-04.p-l-22.p-r-11.icon-header-noti.js-show-cart(data-notify='2')
+              .icon-header-item.cl2.hov-cl1.trans-04.p-l-22.p-r-11.icon-header-noti.js-show-cart(data-notify=listInfoProductInCart.length)
                 i.zmdi.zmdi-shopping-cart
               a.dis-block.icon-header-item.cl2.hov-cl1.trans-04.p-l-22.p-r-11.icon-header-noti(href='#' data-notify='0')
                 i.zmdi.zmdi-favorite-outline
@@ -92,12 +93,12 @@ html
         // Logo moblie
         .logo-mobile
           a(href='/')
-            img(src='images/icons/logo-01.png' alt='IMG-LOGO')
+            img(src='../images/icons/logo-01.png' alt='IMG-LOGO')
         // Icon header
         .wrap-icon-header.flex-w.flex-r-m.m-r-15
           .icon-header-item.cl2.hov-cl1.trans-04.p-r-11.js-show-modal-search
             i.zmdi.zmdi-search
-          .icon-header-item.cl2.hov-cl1.trans-04.p-r-11.p-l-10.icon-header-noti.js-show-cart(data-notify='2')
+          .icon-header-item.cl2.hov-cl1.trans-04.p-r-11.p-l-10.icon-header-noti.js-show-cart(data-notify=listInfoProductInCart.length)
             i.zmdi.zmdi-shopping-cart
           a.dis-block.icon-header-item.cl2.hov-cl1.trans-04.p-r-11.p-l-10.icon-header-noti(href='#' data-notify='0')
             i.zmdi.zmdi-favorite-outline
@@ -128,30 +129,30 @@ html
               li
                 a(href='/') Homepage 1
               li
-                a(href='home-02') Homepage 2
+                a(href='/home-02') Homepage 2
               li
-                a(href='home-03') Homepage 3
+                a(href='/home-03') Homepage 3
             span.arrow-main-menu-m
               i.fa.fa-angle-right(aria-hidden='true')
           li
-            a(href='product') Shop
+            a(href='/product') Shop
           li
-            a.label1.rs1(href='shoping-cart' data-label1='hot') Features
+            a.label1.rs1(href='/shoping-cart' data-label1='hot') Features
           li
-            a(href='blog') Blog
+            a(href='/blog') Blog
           li
-            a(href='about') About
+            a(href='/about') About
           li
-            a(href='contact') Contact
+            a(href='/contact') Contact
       // Modal Search
       .modal-search-header.flex-c-m.trans-04.js-hide-modal-search
         .container-search-header
           button.flex-c-m.btn-hide-modal-search.trans-04.js-hide-modal-search
-            img(src='images/icons/icon-close2.png' alt='CLOSE')
-          form.wrap-search-header.flex-w.p-l-15
-            button.flex-c-m.trans-04
+            img(src='../images/icons/icon-close2.png' alt='CLOSE')
+          form.wrap-search-header.flex-w.p-l-15(action="/product/search" method="GET")
+            input.plh3.search-in-nav(type='text' name='q' placeholder='Search...')
+            button.flex-c-m.trans-04(type="submit")
               i.zmdi.zmdi-search
-            input.plh3(type='text' name='search' placeholder='Search...')
     // Cart
     .wrap-header-cart.js-panel-cart
       .s-full.js-hide-cart
@@ -163,37 +164,24 @@ html
             i.zmdi.zmdi-close
         .header-cart-content.flex-w.js-pscroll
           ul.header-cart-wrapitem.w-full
-            li.header-cart-item.flex-w.flex-t.m-b-12
-              .header-cart-item-img
-                img(src='images/item-cart-01.jpg' alt='IMG')
-              .header-cart-item-txt.p-t-8
-                a.header-cart-item-name.m-b-18.hov-cl1.trans-04(href='#')
-                  | White Shirt Pleat
-                span.header-cart-item-info
-                  | 1 x $19.00
-            li.header-cart-item.flex-w.flex-t.m-b-12
-              .header-cart-item-img
-                img(src='images/item-cart-02.jpg' alt='IMG')
-              .header-cart-item-txt.p-t-8
-                a.header-cart-item-name.m-b-18.hov-cl1.trans-04(href='#')
-                  | Converse All Star
-                span.header-cart-item-info
-                  | 1 x $39.00
-            li.header-cart-item.flex-w.flex-t.m-b-12
-              .header-cart-item-img
-                img(src='images/item-cart-03.jpg' alt='IMG')
-              .header-cart-item-txt.p-t-8
-                a.header-cart-item-name.m-b-18.hov-cl1.trans-04(href='#')
-                  | Nixon Porter Leather
-                span.header-cart-item-info
-                  | 1 x $17.00
+            - for (let i = 0; i < listInfoProductInCart.length; i++)
+                li.header-cart-item.flex-w.flex-t.m-b-12
+                  .header-cart-item-img
+                    img(src=listInfoProductInCart[i].imagePath[0] alt='IMG' data-id=listInfoProductInCart[i]._id)
+                  .header-cart-item-txt.p-t-8
+                    a.header-cart-item-name.m-b-18.hov-cl1.trans-04(href='#') #{listInfoProductInCart[i].productName}
+                    .header-cart-item-info
+                      span.price-product-view-cart $ #{listInfoProductInCart[i].price}
+                      span  x 
+                      span.quantity-view-cart #{listProductInCart[i].quantity}
           .w-full
             .header-cart-total.w-full.p-tb-40
-              | Total: $75.00
+              | Total: 
+              p.d-inline.total-price $ #{total}
             .header-cart-buttons.flex-w.w-full
-              a.flex-c-m.stext-101.cl0.size-107.bg3.bor2.hov-btn3.p-lr-15.trans-04.m-r-8.m-b-10(href='shoping-cart')
+              a.flex-c-m.stext-101.cl0.size-107.bg3.bor2.hov-btn3.p-lr-15.trans-04.m-r-8.m-b-10(href='/shoping-cart')
                 | View Cart
-              a.flex-c-m.stext-101.cl0.size-107.bg3.bor2.hov-btn3.p-lr-15.trans-04.m-b-10(href='shoping-cart')
+              a.flex-c-m.stext-101.cl0.size-107.bg3.bor2.hov-btn3.p-lr-15.trans-04.m-b-10(href='/shoping-cart')
                 | Check Out
     // Login
     #modalLoginForm.modal.fade(tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true')
@@ -211,6 +199,7 @@ html
                       .form-label-group
                         input#inputPassword.form-control(type='password' name='password' placeholder='Password' required='')
                         label(for='inputPassword') Password
+                      p.text-danger.text-center #{errors}
                       button.btn.btn-lg.btn-primary.btn-block.text-uppercase(type='submit') Sign in
                       hr.my-4
                       button.btn.btn-lg.btn-google.btn-block.text-uppercase(type='submit')
@@ -221,6 +210,63 @@ html
                         |  Sign in with Facebook
     block content
       // Footer
+
+    // =================================================== Modal1 ===================================================
+    
+    .wrap-modal1.js-modal1.p-t-60.p-b-20
+      .overlay-modal1.js-hide-modal1
+      .container
+        .bg0.p-t-60.p-b-30.p-lr-15-lg.how-pos3-parent
+          button.how-pos3.hov3.trans-04.js-hide-modal1
+            img(src='../images/icons/icon-close.png' alt='CLOSE')
+          .row#modal-body-product
+            .col-md-6.col-lg-7.p-b-30
+              .p-l-25.p-r-30.p-lr-0-lg
+                .wrap-slick3.flex-sb.flex-w
+                  .wrap-slick3-dots
+                  .wrap-slick3-arrows.flex-sb-m.flex-w
+                  .slick3.gallery-lb
+            .col-md-6.col-lg-5.p-b-30
+              .p-r-50.p-t-5.p-lr-0-lg
+                h4.mtext-105.cl2.js-name-detail.p-b-14#modal-name-product
+                span.mtext-106.cl2#modal-price-product
+                p.stext-102.cl3.p-t-23#modal-des-product
+                .flex-w.flex-r-m.p-b-10
+                  .size-203.flex-c-m.respon6
+                    | Size
+                  .size-204.respon6-next
+                    .rs1-select2.bor8.bg0
+                      select.js-select2.size-detail#modal-select-size(name='size')
+                      .dropDownSelect2
+                .flex-w.flex-r-m.p-b-10
+                  .size-203.flex-c-m.respon6
+                    | Color
+                  .size-204.respon6-next
+                    .rs1-select2.bor8.bg0
+                      select.js-select2.color-detail#modal-select-color(name='color')
+                      .dropDownSelect2
+                .flex-w.flex-r-m.p-b-10
+                  .size-204.flex-w.flex-m.respon6-next
+                    .wrap-num-product.flex-w.m-r-20.m-tb-10
+                      .btn-num-product-down.cl8.hov-btn3.trans-04.flex-c-m
+                        i.fs-16.zmdi.zmdi-minus
+                      input.mtext-104.cl3.txt-center.num-product.quantity-detail(type='number' name='quantity' value='1')
+                      .btn-num-product-up.cl8.hov-btn3.trans-04.flex-c-m
+                        i.fs-16.zmdi.zmdi-plus
+                      input.d-none.id-detail#id(type='hidden' name='id' value='')
+                    button.flex-c-m.stext-101.cl0.size-101.bg1.bor1.hov-btn1.p-lr-15.trans-04.js-addcart-detail
+                      | Add to cart
+              // 
+              .flex-w.flex-m.p-l-100.p-t-40.respon7
+                .flex-m.bor9.p-r-10.m-r-11
+                  a.fs-14.cl3.hov-cl1.trans-04.lh-10.p-lr-5.p-tb-2.js-addwish-detail.tooltip100(href='#' data-tooltip='Add to Wishlist')
+                    i.zmdi.zmdi-favorite
+                a.fs-14.cl3.hov-cl1.trans-04.lh-10.p-lr-5.p-tb-2.m-r-8.tooltip100(href='#' data-tooltip='Facebook')
+                  i.fa.fa-facebook
+                a.fs-14.cl3.hov-cl1.trans-04.lh-10.p-lr-5.p-tb-2.m-r-8.tooltip100(href='#' data-tooltip='Twitter')
+                  i.fa.fa-twitter
+                a.fs-14.cl3.hov-cl1.trans-04.lh-10.p-lr-5.p-tb-2.m-r-8.tooltip100(href='#' data-tooltip='Google Plus')
+                  i.fa.fa-google-plus
     footer.bg3.p-t-75.p-b-32
       .container
         .row
@@ -228,18 +274,10 @@ html
             h4.stext-301.cl0.p-b-30
               | Categories
             ul
-              li.p-b-10
-                a.stext-107.cl7.hov-cl1.trans-04(href='#')
-                  | Women
-              li.p-b-10
-                a.stext-107.cl7.hov-cl1.trans-04(href='#')
-                  | Men
-              li.p-b-10
-                a.stext-107.cl7.hov-cl1.trans-04(href='#')
-                  | Shoes
-              li.p-b-10
-                a.stext-107.cl7.hov-cl1.trans-04(href='#')
-                  | Watches
+              each c in listCategories
+                li.p-b-10
+                  a.stext-107.cl7.hov-cl1.trans-04(href='/product')
+                    | #{c.categoryName}
           .col-sm-6.col-lg-3.p-b-50
             h4.stext-301.cl0.p-b-30
               | Help
@@ -281,15 +319,15 @@ html
         .p-t-40
           .flex-c-m.flex-w.p-b-18
             a.m-all-1(href='#')
-              img(src='images/icons/icon-pay-01.png' alt='ICON-PAY')
+              img(src='../images/icons/icon-pay-01.png' alt='ICON-PAY')
             a.m-all-1(href='#')
-              img(src='images/icons/icon-pay-02.png' alt='ICON-PAY')
+              img(src='../images/icons/icon-pay-02.png' alt='ICON-PAY')
             a.m-all-1(href='#')
-              img(src='images/icons/icon-pay-03.png' alt='ICON-PAY')
+              img(src='../images/icons/icon-pay-03.png' alt='ICON-PAY')
             a.m-all-1(href='#')
-              img(src='images/icons/icon-pay-04.png' alt='ICON-PAY')
+              img(src='../images/icons/icon-pay-04.png' alt='ICON-PAY')
             a.m-all-1(href='#')
-              img(src='images/icons/icon-pay-05.png' alt='ICON-PAY')
+              img(src='../images/icons/icon-pay-05.png' alt='ICON-PAY')
           p.stext-107.cl6.txt-center
             // Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
             | Copyright &copy;
@@ -305,14 +343,14 @@ html
       span.symbol-btn-back-to-top
         i.zmdi.zmdi-chevron-up
     // ===============================================================================================
-    script(src='vendor/jquery/jquery-3.2.1.min.js')
+    script(src='../vendor/jquery/jquery-3.2.1.min.js')
     // ===============================================================================================
-    script(src='vendor/animsition/js/animsition.min.js')
+    script(src='../vendor/animsition/js/animsition.min.js')
     // ===============================================================================================
-    script(src='vendor/bootstrap/js/popper.js')
-    script(src='vendor/bootstrap/js/bootstrap.min.js')
+    script(src='../vendor/bootstrap/js/popper.js')
+    script(src='../vendor/bootstrap/js/bootstrap.min.js')
     // ===============================================================================================
-    script(src='vendor/select2/select2.min.js')
+    script(src='../vendor/select2/select2.min.js')
     script.
       $(".js-select2").each(function(){
       $(this).select2({
@@ -321,23 +359,18 @@ html
       });
       })
     // ===============================================================================================
-    script.
-      $(".main-menu li a").click(function(){
-      $(this).parent().addClass("active-menu").siblings().removeClass("active-menu")
-      })
-    // ===============================================================================================
 
-    script(src='vendor/daterangepicker/moment.min.js')
-    script(src='vendor/daterangepicker/daterangepicker.js')
+    script(src='../vendor/daterangepicker/moment.min.js')
+    script(src='../vendor/daterangepicker/daterangepicker.js')
     // ===============================================================================================
-    script(src='vendor/slick/slick.min.js')
-    script(src='js/slick-custom.js')
+    script(src='../vendor/slick/slick.min.js')
+    script(src='../js/slick-custom.js')
     // ===============================================================================================
-    script(src='vendor/parallax100/parallax100.js')
+    script(src='../vendor/parallax100/parallax100.js')
     script.
       $('.parallax100').parallax100();
     // ===============================================================================================
-    script(src='vendor/MagnificPopup/jquery.magnific-popup.min.js')
+    script(src='../vendor/MagnificPopup/jquery.magnific-popup.min.js')
     script.
       $('.gallery-lb').each(function() { // the containers for all your galleries
       $(this).magnificPopup({
@@ -350,9 +383,9 @@ html
       });
       });
     // ===============================================================================================
-    script(src='vendor/isotope/isotope.pkgd.min.js')
+    script(src='../vendor/isotope/isotope.pkgd.min.js')
     // ===============================================================================================
-    script(src='vendor/sweetalert/sweetalert.min.js')
+    script(src='../vendor/sweetalert/sweetalert.min.js')
     script.
       $('.js-addwish-b2, .js-addwish-detail').on('click', function(e){
       e.preventDefault();
@@ -381,7 +414,7 @@ html
       });
       });
     // ===============================================================================================
-    script(src='vendor/perfect-scrollbar/perfect-scrollbar.min.js')
+    script(src='../vendor/perfect-scrollbar/perfect-scrollbar.min.js')
     script.
       $('.js-pscroll').each(function(){
       $(this).css('position','relative');
@@ -396,4 +429,134 @@ html
       })
       });
     // ===============================================================================================
-    script(src='js/main.js')
+    script(src='../js/main.js')
+    // ===============================================================================================
+    script.
+      $(".js-show-modal1").on("click", function (){
+        let _id = $(this).data("id");
+        $.ajax({
+          url: "/product/product-detail-quick",
+          type: "POST",
+          data:{
+            id: _id
+          },
+          success: (result) => {
+            $("#modal-body-product").stop().animate(0, function(){
+              $("#modal-body-product .slick3").html(result.product.imagePath.map((res)=>{
+                return `<div class="item-slick3" data-thumb=${res}>
+                          <div class="wrap-pic-w pos-relative">
+                              <img src=${res} alt="IMG-PRODUCT">
+                              <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href=${res}>
+                                  <i class="fa fa-expand"></i>
+                              </a>
+                          </div>
+                      </div>`;
+              }));
+              $("#modal-name-product").html(`${result.product.productName}`);
+              $("#modal-price-product").html(`$ ${result.product.price}`);
+              $("#modal-des-product").html(`${result.product.description}`);
+              $("#id").val(`${result.product._id}`);
+              $("#modal-select-size").html(result.product.details.map((res) => { 
+                return `<option value='${res.size}'>${res.size}</option>`
+                    }));
+              $("#modal-select-color").html(result.product.details.map((res) => {
+                        return `<option value='${res.color}'>${res.color}</option>`
+                    }));
+            })
+          }
+        })
+      });
+    script.
+      $(".js-addcart-detail").on("click",function(){
+        const id = $(".id-detail").val();
+        const size = $(".size-detail").val();
+        const color = $(".color-detail").val();
+        const quantity = $(".quantity-detail").val();
+        $.post("/shoping-cart/addToCart",{id,size,color,quantity})
+      })
+    script.
+      let count = 0;
+      let totalItemDelete = 0;
+      $(".table-shopping-cart .table_row").each(function(){
+        count++;
+        $(this).find(".how-itemcart1").on("click", function(){
+          let id = $(this).find("img").attr("data-id");
+          $.get("/shoping-cart/deleteItemInCart", {id});
+          $(this).parent().parent().css("display","none");
+          $(".header-cart-wrapitem li").each(function(){
+            let id2 = $(this).find(".header-cart-item-img img").attr("data-id");
+            if(id === id2)
+            {
+              totalItemDelete = parseFloat($(this).find(".price-product-view-cart").html().replace(/[^0-9.]/g, "")) * parseInt($(".quantity-view-cart").html().replace(/[^0-9.]/g, ""));
+              $(this).css("display","none");
+            };
+          });
+          count -= 1;
+          $(".wrap-menu-desktop .js-show-cart").attr("data-notify", count);
+          $(".wrap-header-mobile .js-show-cart").attr("data-notify", count);
+          $(".total-price").html();
+          let total = parseFloat($(".total-price").html().replace(/[^0-9.]/g, ""));
+          total = total - totalItemDelete;
+          $(".total-price").html(`$ ${total}`);
+        });
+      });
+
+    script.
+      $(".search-in-product").keyup(function(e){
+        const query = $(".search-in-product").val()
+        $.post("/product/search",{q : query},function(result){
+          $(".list-product-search").html(result.product.map( product =>{
+            return `<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item ${product.category.toLowerCase()}">
+                    <div class="block2">
+                        <div class="block2-pic hov-img0">
+                            <img src=${product.imagePath[0]} alt="IMG-PRODUCT">
+                            <a class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1" href="#" data-id="5ef08a432acb39279856ef2d">Quick View</a>
+                        </div>
+                        <div class="block2-txt flex-w flex-t p-t-14">
+                            <div class="block2-txt-child1 flex-col-l">
+                                <a class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6" href="/product/product-detail?id=${product._id}">${product.productName}</a>
+                                <span class="stext-105 cl3">$ ${product.price}</span>
+                            </div>
+                            <div class="block2-txt-child2 flex-r p-t-3">
+                                <a class="btn-addwish-b2 dis-block pos-relative js-addwish-b2" href="#">
+                                    <img class="icon-heart1 dis-block trans-04" src="../images/icons/icon-heart-01.png" alt="ICON">
+                                    <img class="icon-heart2 dis-block trans-04 ab-t-l" src="../images/icons/icon-heart-02.png" alt="ICON">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>`
+          }))
+        });
+      })
+
+    script.
+      let count1 = 0;
+      let totalItemDelete1 = 0;
+      $(".header-cart-wrapitem li").each(function(){
+        count1++;
+        $(this).find(".header-cart-item-img").on("click", function(){
+          let id = $(this).find("img").attr("data-id");
+          $.get("/shoping-cart/deleteItemInCart", {id});
+          $(this).parent().css("display","none");
+          $(".table-shopping-cart .table_row").each(function(){
+            let id2 = $(this).find("img").attr("data-id");
+            if(id === id2)
+            {
+              $(this).css("display","none");
+            };
+          });
+          count1 -= 1;
+          $(".wrap-menu-desktop .js-show-cart").attr("data-notify", count1);
+          $(".wrap-header-mobile .js-show-cart").attr("data-notify", count1);
+          totalItemDelete1 = parseFloat($(this).parent().find(".price-product-view-cart").html().replace(/[^0-9.]/g, "")) * parseInt($(".quantity-view-cart").html().replace(/[^0-9.]/g, ""));
+          let total = parseFloat($(".total-price").html().replace(/[^0-9.]/g, ""));
+          total = total - totalItemDelete1;
+          $(".total-price").html(`$ ${total}`);
+        });
+      });
+    if(errors && errors.length > 0)
+      script(type="text/javascript").
+        $('#modalLoginForm').modal({
+          show: true
+        })

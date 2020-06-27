@@ -1,5 +1,5 @@
 extends layout
-//Product Detail
+
 block content
 	// breadcrumb
 	.container
@@ -22,29 +22,17 @@ block content
 							.wrap-slick3-dots
 							.wrap-slick3-arrows.flex-sb-m.flex-w
 							.slick3.gallery-lb
-								.item-slick3(data-thumb='images/product-detail-01.jpg')
-									.wrap-pic-w.pos-relative
-										img(src='images/product-detail-01.jpg' alt='IMG-PRODUCT')
-										a.flex-c-m.size-108.how-pos1.bor0.fs-16.cl10.bg0.hov-btn3.trans-04(href='images/product-detail-01.jpg')
-											i.fa.fa-expand
-								.item-slick3(data-thumb='images/product-detail-02.jpg')
-									.wrap-pic-w.pos-relative
-										img(src='images/product-detail-02.jpg' alt='IMG-PRODUCT')
-										a.flex-c-m.size-108.how-pos1.bor0.fs-16.cl10.bg0.hov-btn3.trans-04(href='images/product-detail-02.jpg')
-											i.fa.fa-expand
-								.item-slick3(data-thumb='images/product-detail-03.jpg')
-									.wrap-pic-w.pos-relative
-										img(src='images/product-detail-03.jpg' alt='IMG-PRODUCT')
-										a.flex-c-m.size-108.how-pos1.bor0.fs-16.cl10.bg0.hov-btn3.trans-04(href='images/product-detail-03.jpg')
-											i.fa.fa-expand
+								each imgSrc in product.imagePath
+									.item-slick3(data-thumb=imgSrc)
+										.wrap-pic-w.pos-relative
+											img(src=imgSrc alt='IMG-PRODUCT')
+											a.flex-c-m.size-108.how-pos1.bor0.fs-16.cl10.bg0.hov-btn3.trans-04(href='#')
+												i.fa.fa-expand
 				.col-md-6.col-lg-5.p-b-30
 					.p-r-50.p-t-5.p-lr-0-lg
-						h4.mtext-105.cl2.js-name-detail.p-b-14
-							| Lightweight Jacket
-						span.mtext-106.cl2
-							| $58.79
-						p.stext-102.cl3.p-t-23
-							| Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.
+						h4.mtext-105.cl2.js-name-detail.p-b-14 #{product.productName}
+						span.mtext-106.cl2=`$ ${product.price}`
+						p.stext-102.cl3.p-t-23 #{product.description}
 						// 
 						.p-t-33
 							.flex-w.flex-r-m.p-b-10
@@ -52,34 +40,29 @@ block content
 									| Size
 								.size-204.respon6-next
 									.rs1-select2.bor8.bg0
-										select.js-select2(name='time')
-											option Choose an option
-											option Size S
-											option Size M
-											option Size L
-											option Size XL
+										select.js-select2.size-detail(name='size' required)
+											each detail in product.details
+												option(value=detail.size) #{detail.size}
 										.dropDownSelect2
 							.flex-w.flex-r-m.p-b-10
 								.size-203.flex-c-m.respon6
 									| Color
 								.size-204.respon6-next
 									.rs1-select2.bor8.bg0
-										select.js-select2(name='time')
-											option Choose an option
-											option Red
-											option Blue
-											option White
-											option Grey
+										select.js-select2.color-detail(name='color' required)
+											each detail in product.details
+												option(value=detail.color) #{detail.color}
 										.dropDownSelect2
 							.flex-w.flex-r-m.p-b-10
 								.size-204.flex-w.flex-m.respon6-next
 									.wrap-num-product.flex-w.m-r-20.m-tb-10
 										.btn-num-product-down.cl8.hov-btn3.trans-04.flex-c-m
 											i.fs-16.zmdi.zmdi-minus
-										input.mtext-104.cl3.txt-center.num-product(type='number' name='num-product' value='1')
+										input.mtext-104.cl3.txt-center.num-product.quantity-detail(type='number' name='quantity' value='1')
 										.btn-num-product-up.cl8.hov-btn3.trans-04.flex-c-m
 											i.fs-16.zmdi.zmdi-plus
-									button.flex-c-m.stext-101.cl0.size-101.bg1.bor1.hov-btn1.p-lr-15.trans-04.js-addcart-detail
+										input.d-none.id-detail(type='hidden' name='id' value=product._id)
+									button.flex-c-m.stext-101.cl0.size-101.bg1.bor1.hov-btn1.p-lr-15.trans-04.js-addcart-detail(type="submit")
 										| Add to cart
 						// 
 						.flex-w.flex-m.p-l-100.p-t-40.respon7
@@ -148,7 +131,7 @@ block content
 										// Review
 										.flex-w.flex-t.p-b-68
 											.wrap-pic-s.size-109.bor0.of-hidden.m-r-18.m-t-6
-												img(src='images/avatar-01.jpg' alt='AVATAR')
+												img(src='../images/avatar-01.jpg' alt='AVATAR')
 											.size-207
 												.flex-w.flex-sb-m.p-b-17
 													span.mtext-107.cl2.p-r-20
@@ -200,14 +183,14 @@ block content
 			.p-b-45
 				h3.ltext-106.cl5.txt-center
 					| Related Products
-			// Slide2
+			// Slide2 =============== 8 item ================
 			.wrap-slick2
 				.slick2
 					.item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
 						// Block2
 						.block2
 							.block2-pic.hov-img0
-								img(src='images/product-01.jpg' alt='IMG-PRODUCT')
+								img(src='' alt='IMG-PRODUCT')
 								a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
 									| Quick View
 							.block2-txt.flex-w.flex-t.p-t-14
@@ -218,208 +201,5 @@ block content
 										| $16.64
 								.block2-txt-child2.flex-r.p-t-3
 									a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
-										img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
-										img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
-					.item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
-						// Block2
-						.block2
-							.block2-pic.hov-img0
-								img(src='images/product-02.jpg' alt='IMG-PRODUCT')
-								a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
-									| Quick View
-							.block2-txt.flex-w.flex-t.p-t-14
-								.block2-txt-child1.flex-col-l
-									a.stext-104.cl4.hov-cl1.trans-04.js-name-b2.p-b-6(href='product-detail')
-										| Herschel supply
-									span.stext-105.cl3
-										| $35.31
-								.block2-txt-child2.flex-r.p-t-3
-									a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
-										img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
-										img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
-					.item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
-						// Block2
-						.block2
-							.block2-pic.hov-img0
-								img(src='images/product-03.jpg' alt='IMG-PRODUCT')
-								a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
-									| Quick View
-							.block2-txt.flex-w.flex-t.p-t-14
-								.block2-txt-child1.flex-col-l
-									a.stext-104.cl4.hov-cl1.trans-04.js-name-b2.p-b-6(href='product-detail')
-										| Only Check Trouser
-									span.stext-105.cl3
-										| $25.50
-								.block2-txt-child2.flex-r.p-t-3
-									a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
-										img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
-										img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
-					.item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
-						// Block2
-						.block2
-							.block2-pic.hov-img0
-								img(src='images/product-04.jpg' alt='IMG-PRODUCT')
-								a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
-									| Quick View
-							.block2-txt.flex-w.flex-t.p-t-14
-								.block2-txt-child1.flex-col-l
-									a.stext-104.cl4.hov-cl1.trans-04.js-name-b2.p-b-6(href='product-detail')
-										| Classic Trench Coat
-									span.stext-105.cl3
-										| $75.00
-								.block2-txt-child2.flex-r.p-t-3
-									a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
-										img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
-										img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
-					.item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
-						// Block2
-						.block2
-							.block2-pic.hov-img0
-								img(src='images/product-05.jpg' alt='IMG-PRODUCT')
-								a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
-									| Quick View
-							.block2-txt.flex-w.flex-t.p-t-14
-								.block2-txt-child1.flex-col-l
-									a.stext-104.cl4.hov-cl1.trans-04.js-name-b2.p-b-6(href='product-detail')
-										| Front Pocket Jumper
-									span.stext-105.cl3
-										| $34.75
-								.block2-txt-child2.flex-r.p-t-3
-									a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
-										img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
-										img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
-					.item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
-						// Block2
-						.block2
-							.block2-pic.hov-img0
-								img(src='images/product-06.jpg' alt='IMG-PRODUCT')
-								a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
-									| Quick View
-							.block2-txt.flex-w.flex-t.p-t-14
-								.block2-txt-child1.flex-col-l
-									a.stext-104.cl4.hov-cl1.trans-04.js-name-b2.p-b-6(href='product-detail')
-										| Vintage Inspired Classic
-									span.stext-105.cl3
-										| $93.20
-								.block2-txt-child2.flex-r.p-t-3
-									a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
-										img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
-										img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
-					.item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
-						// Block2
-						.block2
-							.block2-pic.hov-img0
-								img(src='images/product-07.jpg' alt='IMG-PRODUCT')
-								a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
-									| Quick View
-							.block2-txt.flex-w.flex-t.p-t-14
-								.block2-txt-child1.flex-col-l
-									a.stext-104.cl4.hov-cl1.trans-04.js-name-b2.p-b-6(href='product-detail')
-										| Shirt in Stretch Cotton
-									span.stext-105.cl3
-										| $52.66
-								.block2-txt-child2.flex-r.p-t-3
-									a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
-										img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
-										img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
-					.item-slick2.p-l-15.p-r-15.p-t-15.p-b-15
-						// Block2
-						.block2
-							.block2-pic.hov-img0
-								img(src='images/product-08.jpg' alt='IMG-PRODUCT')
-								a.block2-btn.flex-c-m.stext-103.cl2.size-102.bg0.bor2.hov-btn1.p-lr-15.trans-04.js-show-modal1(href='#')
-									| Quick View
-							.block2-txt.flex-w.flex-t.p-t-14
-								.block2-txt-child1.flex-col-l
-									a.stext-104.cl4.hov-cl1.trans-04.js-name-b2.p-b-6(href='product-detail')
-										| Pieces Metallic Printed
-									span.stext-105.cl3
-										| $18.96
-								.block2-txt-child2.flex-r.p-t-3
-									a.btn-addwish-b2.dis-block.pos-relative.js-addwish-b2(href='#')
-										img.icon-heart1.dis-block.trans-04(src='images/icons/icon-heart-01.png' alt='ICON')
-										img.icon-heart2.dis-block.trans-04.ab-t-l(src='images/icons/icon-heart-02.png' alt='ICON')
-	// Modal1
-	.wrap-modal1.js-modal1.p-t-60.p-b-20
-		.overlay-modal1.js-hide-modal1
-		.container
-			.bg0.p-t-60.p-b-30.p-lr-15-lg.how-pos3-parent
-				button.how-pos3.hov3.trans-04.js-hide-modal1
-					img(src='images/icons/icon-close.png' alt='CLOSE')
-				.row
-					.col-md-6.col-lg-7.p-b-30
-						.p-l-25.p-r-30.p-lr-0-lg
-							.wrap-slick3.flex-sb.flex-w
-								.wrap-slick3-dots
-								.wrap-slick3-arrows.flex-sb-m.flex-w
-								.slick3.gallery-lb
-									.item-slick3(data-thumb='images/product-detail-01.jpg')
-										.wrap-pic-w.pos-relative
-											img(src='images/product-detail-01.jpg' alt='IMG-PRODUCT')
-											a.flex-c-m.size-108.how-pos1.bor0.fs-16.cl10.bg0.hov-btn3.trans-04(href='images/product-detail-01.jpg')
-												i.fa.fa-expand
-									.item-slick3(data-thumb='images/product-detail-02.jpg')
-										.wrap-pic-w.pos-relative
-											img(src='images/product-detail-02.jpg' alt='IMG-PRODUCT')
-											a.flex-c-m.size-108.how-pos1.bor0.fs-16.cl10.bg0.hov-btn3.trans-04(href='images/product-detail-02.jpg')
-												i.fa.fa-expand
-									.item-slick3(data-thumb='images/product-detail-03.jpg')
-										.wrap-pic-w.pos-relative
-											img(src='images/product-detail-03.jpg' alt='IMG-PRODUCT')
-											a.flex-c-m.size-108.how-pos1.bor0.fs-16.cl10.bg0.hov-btn3.trans-04(href='images/product-detail-03.jpg')
-												i.fa.fa-expand
-					.col-md-6.col-lg-5.p-b-30
-						.p-r-50.p-t-5.p-lr-0-lg
-							h4.mtext-105.cl2.js-name-detail.p-b-14
-								| Lightweight Jacket
-							span.mtext-106.cl2
-								| $58.79
-							p.stext-102.cl3.p-t-23
-								| Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.
-							// 
-							.p-t-33
-								.flex-w.flex-r-m.p-b-10
-									.size-203.flex-c-m.respon6
-										| Size
-									.size-204.respon6-next
-										.rs1-select2.bor8.bg0
-											select.js-select2(name='time')
-												option Choose an option
-												option Size S
-												option Size M
-												option Size L
-												option Size XL
-											.dropDownSelect2
-								.flex-w.flex-r-m.p-b-10
-									.size-203.flex-c-m.respon6
-										| Color
-									.size-204.respon6-next
-										.rs1-select2.bor8.bg0
-											select.js-select2(name='time')
-												option Choose an option
-												option Red
-												option Blue
-												option White
-												option Grey
-											.dropDownSelect2
-								.flex-w.flex-r-m.p-b-10
-									.size-204.flex-w.flex-m.respon6-next
-										.wrap-num-product.flex-w.m-r-20.m-tb-10
-											.btn-num-product-down.cl8.hov-btn3.trans-04.flex-c-m
-												i.fs-16.zmdi.zmdi-minus
-											input.mtext-104.cl3.txt-center.num-product(type='number' name='num-product' value='1')
-											.btn-num-product-up.cl8.hov-btn3.trans-04.flex-c-m
-												i.fs-16.zmdi.zmdi-plus
-										button.flex-c-m.stext-101.cl0.size-101.bg1.bor1.hov-btn1.p-lr-15.trans-04.js-addcart-detail
-											| Add to cart
-							// 
-							.flex-w.flex-m.p-l-100.p-t-40.respon7
-								.flex-m.bor9.p-r-10.m-r-11
-									a.fs-14.cl3.hov-cl1.trans-04.lh-10.p-lr-5.p-tb-2.js-addwish-detail.tooltip100(href='#' data-tooltip='Add to Wishlist')
-										i.zmdi.zmdi-favorite
-								a.fs-14.cl3.hov-cl1.trans-04.lh-10.p-lr-5.p-tb-2.m-r-8.tooltip100(href='#' data-tooltip='Facebook')
-									i.fa.fa-facebook
-								a.fs-14.cl3.hov-cl1.trans-04.lh-10.p-lr-5.p-tb-2.m-r-8.tooltip100(href='#' data-tooltip='Twitter')
-									i.fa.fa-twitter
-								a.fs-14.cl3.hov-cl1.trans-04.lh-10.p-lr-5.p-tb-2.m-r-8.tooltip100(href='#' data-tooltip='Google Plus')
-									i.fa.fa-google-plus
+										img.icon-heart1.dis-block.trans-04(src='../images/icons/icon-heart-01.png' alt='ICON')
+										img.icon-heart2.dis-block.trans-04.ab-t-l(src='../images/icons/icon-heart-02.png' alt='ICON')

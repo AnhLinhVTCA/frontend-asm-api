@@ -8,7 +8,9 @@ router.post("/", async (req, res, next) => {
   if (customer && customer.password === password) {
     res.redirect("/admin");
   }
-  res.status(400).send("Invalid email or password!");
+  req.flash("errors", "Invalid email or password!");
+  res.redirect("/");
+  next();
 });
 
 module.exports = router;

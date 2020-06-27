@@ -15,19 +15,20 @@ block content
                   tr.row
                     th.col-sm-1.text-center #
                     th.col-sm-2.text-center Product Name
-                    th.col-sm-1.text-center Category
+                    th.col-sm-2.text-center Image
                     th.col-sm-1.text-center Color
                     th.col-sm-1.text-center Size
                     th.col-sm-1.text-center Quantity
-                    th.col-sm-3.text-center Description
-                    th.col-sm-1.text-center Date create
-                    th.col-sm-1 Price
+                    th.col-sm-2.text-center Price
+                    th.col-sm-1.text-center Update
+                    th.col-sm-1.text-center Delete
                 tbody
                   - for (let i=0; i < listProducts.length; i++)
                     tr.row
                       td.col-sm-1.text-center #{i+1}
                       td.col-sm-2.text-center #{listProducts[i].productName}
-                      td.col-sm-1.text-center #{listProducts[i].category}
+                      td.col-sm-2.text-center
+                        img(src=listProducts[i].imagePath[0] alt="product" width="100px" height="100px")
                       td.col-sm-1.text-center
                         - for (let j=0; j < listProducts[i].details.length; j++)
                             p #{listProducts[i].details[j].color}
@@ -37,6 +38,8 @@ block content
                       td.col-sm-1.text-center
                         - for (let j=0; j < listProducts[i].details.length; j++)
                             p #{listProducts[i].details[j].quantity}
-                      td.col-sm-3 #{listProducts[i].description}
-                      td.col-sm-1.text-center #{listProducts[i].dateCreate.toLocaleString()}
-                      td.col-sm-1 #{listProducts[i].price}$
+                      td.col-sm-2.text-center $ #{listProducts[i].price}
+                      th.col-sm-1.text-center
+                        a.btn.btn-primary(href=`/admin/updateProduct?id=${listProducts[i]._id}`) Update
+                      th.col-sm-1.text-center
+                        a.btn.btn-danger(href=`/admin/deleteProduct?id=${listProducts[i]._id}`) Delete

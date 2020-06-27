@@ -9,7 +9,7 @@ block content
       .row
         .col-md-12.col-xs-12
           .white-box
-            form.form-horizontal.form-material(action="/admin/addprd" method="POST" enctype="multipart/form-data")
+            form.form-horizontal.form-material(action="/admin/insertProduct" method="POST" enctype="multipart/form-data")
               .form-group
                 label.col-md-12 Product Name
                 .col-md-12
@@ -17,11 +17,13 @@ block content
               .form-group
                 label.col-md-12 Price
                 .col-md-12
-                  input.form-control.form-control-line(type='number' min="10000" max="10000000" name='price' placeholder="Price" required)
+                  input.form-control.form-control-line(type='number' min="100" max="100000" name='price' placeholder="Price" required)
               .form-group
                 label.col-md-12 Category
                 .col-md-12
-                  input.form-control.form-control-line(type='text' name="category" placeholder="Category" required)
+                  select.form-control.form-control-line(name="category" required)
+                    each c in listCategories
+                      option(value=c.categoryName) #{c.categoryName}
               .listDetail
                 .row.col-md-12
                   .form-group
@@ -31,8 +33,8 @@ block content
                   .form-group
                     label.col-sm-12 Size
                     .col-sm-12
-                      select.form-control.form-control-line(name="size")
-                        option(selected="selected" value="S") S
+                      select.form-control.form-control-line(name="size" required)
+                        option(value="S") S
                         option(value="M") M
                         option(value="L") L
                         option(value="XL") XL
@@ -41,6 +43,10 @@ block content
                     label.col-md-12 Quantity
                     .col-md-12
                       input.form-control.form-control-line(type='number' name="quantity" min="0" max="1000" placeholder="Quantity")
+                  .form-group
+                      label.col-md-12
+                      .col-sm-12
+                        h3.btn.btn-danger.detele-row-size Detele
               .form-group
                 .col-sm-12
                   h3.btn.btn-primary.addDetail Add detail
@@ -51,7 +57,7 @@ block content
               .form-group
                 label.col-md-12 Image
                 .col-md-12
-                  input.form-control.form-control-line(type='file' name="image" multiple)
+                  input.form-control.form-control-line(type='file' name="image" multiple required)
               .form-group
                 .col-sm-12
                   button.btn.btn-success(type="submit") Insert Product

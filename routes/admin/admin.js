@@ -1,88 +1,107 @@
 const express = require("express");
-const adminServices = require("../../service/adminServices");
+const productServices = require("../../service/productServices");
+const categoryServices = require("../../service/categoryServices");
 const router = express.Router();
-const multer = require("multer");
-const productModel = require("../../model/product");
+
 router.get("/", async (req, res, next) => {
-  const allProduct = await adminServices.getAllProducts();
-  res.render("./admin/listProduct", {
-    title: "Admin",
-    listProducts: allProduct,
-  });
-});
-
-router.get("/addProduct", (req, res, next) => {
-  res.render("./admin/addProduct", { title: "Admin" });
-});
-
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "./public/uploads/");
-  },
-
-  filename: function (req, file, cb) {
-    cb(null, file.originalname);
-  },
-});
-
-const fileFilter = (req, file, cb) => {
-  if (
-    file.mimetype === "image/jpg" ||
-    file.mimetype === "image/jpeg" ||
-    file.mimetype === "image/png"
-  ) {
-    cb(null, true);
-  } else {
-    cb(new Error("Image uploaded is not of type jpg/jpeg or png"), true);
+  try {
+    const allProduct = await productServices.getAllProducts();
+    res.render("./admin/listProducts", {
+      title: "Admin",
+      index: 1,
+      listProducts: allProduct,
+    });
+  } catch (error) {
+    throw new Error(error);
   }
-};
+});
 
-const upload = multer({ storage, fileFilter });
-router.post("/addprd", upload.array("image", 12), async (req, res, next) => {
-  const imagePath = [];
-  const details = [];
-  const {
-    productName,
-    price,
-    category,
-    color,
-    size,
-    quantity,
-    description,
-  } = req.body;
-  for (const pathImg of req.files) {
-    imagePath.push(pathImg.path);
+router.get("/insertProduct", async (req, res, next) => {
+  try {
+    const allCategories = await categoryServices.getAllCategories();
+    res.render("./admin/insertProduct", {
+      title: "Admin",
+      index: 2,
+      listCategories: allCategories,
+    });
+  } catch (error) {
+    throw new Error(error);
   }
-  const product = await productModel.find({ producName: productName });
-  if (Array.isArray(color)) {
-    for (let i = 0; i < color.length; i++) {
-      details.push({
-        color: color[i].toUpperCase(),
-        size: size[i],
-        quantity: quantity[i],
-      });
+});
+
+router.post(
+  "/insertProduct",
+  productServices.upload.array("image", 12),
+  async (req, res, next) => {
+    try {
+      await productServices.insertProduct(req);
+      res.redirect("/admin");
+    } catch (error) {
+      throw new Error(error);
     }
-  } else {
-    details.push({
-      color: color.toUpperCase(),
-      size: size,
-      quantity: quantity,
-    });
   }
-  if (product.length === 0) {
-    console.log(req.body);
-    console.log(details);
-    await productModel.create({
-      productName,
-      price,
-      category,
-      details,
-      description,
-      dateCreate: Date.now(),
-      imagePath,
+);
+
+router.get("/showListCategories", async (req, res, next) => {
+  try {
+    const allCategories = await categoryServices.getAllCategories();
+    res.render("./admin/listCategories", {
+      title: "Admin",
+      index: 3,
+      listCategories: allCategories,
     });
+  } catch (error) {
+    throw new Error(error);
   }
-  res.redirect("/admin");
+});
+
+router.post("/insertCategory", async (req, res, next) => {
+  try {
+    const { categoryName } = req.body;
+    const isInsert = await categoryServices.insertCategory(categoryName);
+    if (isInsert) res.redirect("/admin/showListCategories");
+    res.redirect("/admin/showListCategories", 404);
+  } catch (error) {
+    throw new Error(error);
+  }
+});
+
+router.get("/updateProduct?:id", async (req, res, next) => {
+  const { id } = req.query;
+  try {
+    if (id && id !== undefined) {
+      const product = await productServices.getProductById(id);
+      const category = await categoryServices.getAllCategories();
+      if (product) res.render("./admin/updateProduct", { product, category });
+    }
+    res.redirect("/admin/listProducts", 404);
+  } catch (error) {
+    throw new Error(error);
+  }
+});
+
+router.post(
+  "/updateProduct",
+  productServices.upload.array("image", 12),
+  (req, res, next) => {
+    try {
+      const isUpdate = productServices.updateProduct(req, res, "@cart");
+      if (isUpdate) res.redirect("/admin");
+      res.redirect("/admin", 404);
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
+);
+
+router.get("/deleteProduct?:id", async (req, res, next) => {
+  try {
+    const isDelete = await productServices.deleteProduct(req, res);
+    if (isDelete) res.redirect("/admin");
+    res.redirect("/admin", 404);
+  } catch (error) {
+    throw new Error(error);
+  }
 });
 
 module.exports = router;

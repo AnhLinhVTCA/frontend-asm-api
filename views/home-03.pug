@@ -121,16 +121,9 @@ block content
         .flex-w.flex-l-m.filter-tope-group.m-tb-10
           button.stext-106.cl6.hov1.bor3.trans-04.m-r-32.m-tb-5.how-active1(data-filter='*')
             | All Products
-          button.stext-106.cl6.hov1.bor3.trans-04.m-r-32.m-tb-5(data-filter='.women')
-            | Women
-          button.stext-106.cl6.hov1.bor3.trans-04.m-r-32.m-tb-5(data-filter='.men')
-            | Men
-          button.stext-106.cl6.hov1.bor3.trans-04.m-r-32.m-tb-5(data-filter='.bag')
-            | Bag
-          button.stext-106.cl6.hov1.bor3.trans-04.m-r-32.m-tb-5(data-filter='.shoes')
-            | Shoes
-          button.stext-106.cl6.hov1.bor3.trans-04.m-r-32.m-tb-5(data-filter='.watches')
-            | Watches
+          each c in listCategories
+            button.stext-106.cl6.hov1.bor3.trans-04.m-r-32.m-tb-5(data-filter=`.${c.categoryName.toLowerCase()}`)
+              | #{c.categoryName}
         .flex-w.flex-c-m.m-tb-10
           .flex-c-m.stext-106.cl6.size-104.bor4.pointer.hov-btn3.trans-04.m-r-8.m-tb-4.js-show-filter
             i.icon-filter.cl2.m-r-6.fs-15.trans-04.zmdi.zmdi-filter-list
@@ -526,7 +519,7 @@ block content
     .container
       .bg0.p-t-60.p-b-30.p-lr-15-lg.how-pos3-parent
         button.how-pos3.hov3.trans-04.js-hide-modal1
-          img(src='images/icons/icon-close.png' alt='CLOSE')
+          img(src='../images/icons/icon-close.png' alt='CLOSE')
         .row
           .col-md-6.col-lg-7.p-b-30
             .p-l-25.p-r-30.p-lr-0-lg
