@@ -65,9 +65,8 @@ const insertProduct = async (req) => {
   });
   if (!product) {
     for (const pathImg of req.files) {
-      if (pathImg !== "") imagePath.push(pathImg.path);
+      if (pathImg !== "") imagePath.push(pathImg.path.replace("public", ""));
     }
-
     if (Array.isArray(color)) {
       for (let i = 0; i < color.length; i++) {
         if (color !== "" && quantity !== "") {
@@ -174,13 +173,9 @@ const updateProduct = async (req, res) => {
 const deleteProduct = async (req, res, name) => {
   const { id } = req.query;
   if (id && id !== undefined) {
-    await productModel.deleteOne({ _id: id });
-    const isDeleteProductInCart = cartServices.deleteProductInCart(
-      req,
-      res,
-      name
-    );
-    if (isDeleteProductInCart) return true;
+    await productModel.findByIdAndDelete({ _id: id });
+    cartServices.deleteProductInCart(req, res, name);
+    return true;
   }
   return false;
 };

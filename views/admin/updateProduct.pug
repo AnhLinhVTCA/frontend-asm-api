@@ -11,7 +11,7 @@ block content
             .white-box.list-image-update
               each image,key in product.imagePath
                 .how-itemcart1(style="width: 100% !important")
-                  img(src=image alt="product" width="100%" index=key)
+                  img(src=`../${image}` alt="product" width="100%" index=key)
               .product-btm-box
                 input.form-control.form-control-line(type="file" name="image" multiple)
           .col-md-8.col-xs-12

@@ -164,14 +164,14 @@ html
             i.zmdi.zmdi-close
         .header-cart-content.flex-w.js-pscroll
           ul.header-cart-wrapitem.w-full
-            - for (let i = 0; i < listInfoProductInCart.length; i++)
+            each product, i in listInfoProductInCart
                 li.header-cart-item.flex-w.flex-t.m-b-12
                   .header-cart-item-img
-                    img(src=listInfoProductInCart[i].imagePath[0] alt='IMG' data-id=listInfoProductInCart[i]._id)
+                    img(src=product.imagePath[0] alt='IMG' data-id=product._id)
                   .header-cart-item-txt.p-t-8
-                    a.header-cart-item-name.m-b-18.hov-cl1.trans-04(href='#') #{listInfoProductInCart[i].productName}
+                    a.header-cart-item-name.m-b-18.hov-cl1.trans-04(href=`/product/product-detail?id=${product._id}`) #{product.productName}
                     .header-cart-item-info
-                      span.price-product-view-cart $ #{listInfoProductInCart[i].price}
+                      span.price-product-view-cart $ #{product.price}
                       span  x 
                       span.quantity-view-cart #{listProductInCart[i].quantity}
           .w-full
@@ -509,7 +509,7 @@ html
             return `<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item ${product.category.toLowerCase()}">
                     <div class="block2">
                         <div class="block2-pic hov-img0">
-                            <img src=${product.imagePath[0]} alt="IMG-PRODUCT">
+                            <img src=${product.imagePath[0]} alt="IMG-PRODUCT" width="270px" height="332px">
                             <a class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1" href="#" data-id="5ef08a432acb39279856ef2d">Quick View</a>
                         </div>
                         <div class="block2-txt flex-w flex-t p-t-14">
