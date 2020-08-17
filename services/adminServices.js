@@ -138,7 +138,7 @@ const upload = multer({
   fileFilter,
 });
 
-// =================================================================== service
+// =================================================================== service ============================
 
 const adminInsertProduct = async (product) => {
   const imagePath = [];
