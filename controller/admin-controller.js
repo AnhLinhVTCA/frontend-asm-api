@@ -40,9 +40,21 @@ const adminListProducts = async (req, res, next) => {
   }
 }
 
+const adminListProductsDeleted = async (req, res, next) => {
+  try {
+    const listProduct = await adminServices.adminListProductsDeleted();
+    res.status(200).json(listProduct);
+  } catch (error) {
+    next({
+      status: HttpStatus.BAD_REQUEST,
+      message: error.message,
+    });
+  }
+}
+
 const adminUpdateProduct = async (req, res, next) => {
   try {
-    const { product } = req.body
+    const product = req.body
     const isUpdateProduct = await adminServices.adminUpdateProduct(product);
     res.status(200).json(isUpdateProduct);
   } catch (error) {
@@ -55,8 +67,8 @@ const adminUpdateProduct = async (req, res, next) => {
 
 const adminInsertProduct = async (req, res, next) => {
   try {
-    const { product } = req.body;
-    const isInsertProduct = productServices.adminInsertProduct(product);
+    const product = req.body;
+    const isInsertProduct = adminServices.adminInsertProduct(product);
     res.status(200).json(isInsertProduct)
   } catch (error) {
     next({
@@ -68,9 +80,9 @@ const adminInsertProduct = async (req, res, next) => {
 
 const adminDeleteProduct = async (req, res, next) => {
   try {
-    const { id } = req.query;
-    const isDeleteProduct = productServices.adminDeleteProduct(id);
-    res.status(200).json(isDeleteProduct)
+    const { _id } = req.body;
+    const isDeleteProduct = await adminServices.adminDeleteProduct(_id);
+    return res.status(200).json(isDeleteProduct)
   } catch (error) {
     next({
       status: HttpStatus.BAD_REQUEST,
@@ -100,5 +112,6 @@ module.exports = {
   adminUpdateProduct,
   adminDeleteProduct,
   adminInsertCategory,
+  adminListProductsDeleted,
   upload: adminServices.upload
 }

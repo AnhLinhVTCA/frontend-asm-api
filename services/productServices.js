@@ -1,7 +1,7 @@
 const productModel = require("../model/product");
 
 const getAllProducts = async () => {
-  return await productModel.find({ deleted_at: null });
+  return await productModel.find({ deleted_at: "" });
 };
 
 const getProductById = async (_id) => {

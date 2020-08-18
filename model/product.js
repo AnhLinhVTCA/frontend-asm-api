@@ -16,6 +16,7 @@ module.exports = mongoose.model(
     description: String,
     dateCreate: Date,
     imagePath: [String],
+    deleted_at: String,
   },
   "product"
 );

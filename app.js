@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use(express.json({ limit: '2MB' }));
-app.use("/image", express.static(__dirname + '/public/uploads'))
+app.use("/images", express.static(__dirname + '/public/uploads'))
 app.use(express.static(__dirname + "/public/homepage"));
 
 app.use("/api", router);
